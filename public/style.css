@@ -75,7 +75,17 @@ button {
   #addressBook img {
     width: 50px;
   }
+
   .form {
     width: 75vw;
+  }
+
+  label {
+    width: 120px;
+  }
+  input {
+    display: inline-block;
+    width: 45%;
+    margin-left: 1rem;
   }
 }
