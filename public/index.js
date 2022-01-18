@@ -1,16 +1,23 @@
-const addressBook = document.querySelector('#addressBook');
+function displayContacts() {
+  const addressBook = document.querySelector('#addressBook');
 
-db.collection('contacts').onSnapshot((querySnapshot) => {
-  querySnapshot.forEach((doc) => {
-    const div = document.createElement('div');
-    const contact = doc.data();
-    div.innerHTML = `
+  // Clear the address book so that it can be repopulated
+  addressBook.innerHTML = '';
+
+  db.collection('contacts')
+    .get()
+    .then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        const div = document.createElement('div');
+        const contact = doc.data();
+        div.innerHTML = `
       <img src='img/avater.png' alt='avater' />
       <h3>${contact.name}</h3>
       <p>${contact.phoneNumber}</p>`;
-    addressBook.appendChild(div);
-  });
-});
+        addressBook.appendChild(div);
+      });
+    });
+}
 
 function createContact() {
   const names = document.querySelector('#names');
@@ -24,4 +31,7 @@ function createContact() {
   // Clear the text inputs
   names.value = '';
   phoneNumber.value = '';
+
+  // Display new list of contacts
+  displayContacts();
 }
