@@ -23,15 +23,18 @@ function createContact() {
   const names = document.querySelector('#names');
   const phoneNumber = document.querySelector('#phoneNumber');
 
-  db.collection('contacts').add({
-    name: names.value,
-    phoneNumber: phoneNumber.value,
-  });
+  //Only create a contact if name is not empty
+  if (names.value.length > 0) {
+    db.collection('contacts').add({
+      name: names.value,
+      phoneNumber: phoneNumber.value,
+    });
 
-  // Clear the text inputs
-  names.value = '';
-  phoneNumber.value = '';
+    // Clear the text inputs
+    names.value = '';
+    phoneNumber.value = '';
 
-  // Display new list of contacts
-  displayContacts();
+    // Display new list of contacts
+    displayContacts();
+  }
 }
