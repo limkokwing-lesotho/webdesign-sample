@@ -11,9 +11,9 @@ function displayContacts() {
         const div = document.createElement('div');
         const contact = doc.data();
         div.innerHTML = `
-      <img src='img/avater.png' alt='avater' />
-      <h3>${contact.name}</h3>
-      <p>${contact.phoneNumber}</p>`;
+          <img src='img/avater.png' alt='avater' />
+          <h3>${contact.name}</h3>
+          <p>${contact.phoneNumber}</p>`;
         addressBook.appendChild(div);
       });
     });
