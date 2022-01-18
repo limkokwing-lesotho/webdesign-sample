@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Contact Book</title>
+  </head>
+  <body>
+    <header>
+      <h1>Contact Book</h1>
+    </header>
+    <section class="form">
+      <p>
+        <label for="name">Names:</label>
+        <input type="text" id="names" />
+      </p>
+      <p>
+        <label for="name">Phone Number:</label>
+        <input type="tel" id="phoneNumber" />
+      </p>
+      <button id="button" onclick="createContact()">Add</button>
+    </section>
+
+    <div id="addressBook"></div>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js';
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: 'AIzaSyDiL5ZK2kPpvRGZgh3iv2pjFmy0YIYuoaE',
+        authDomain: 'webdesign-sample.firebaseapp.com',
+        projectId: 'webdesign-sample',
+        storageBucket: 'webdesign-sample.appspot.com',
+        messagingSenderId: '697396592897',
+        appId: '1:697396592897:web:06c5147353c7b42a359b00',
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      var db = firebase.firestore();
+    </script>
+    <script src="index.js"></script>
+  </body>
+</html>
