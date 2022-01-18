@@ -24,7 +24,7 @@ label {
 }
 input {
   display: inline-block;
-  width: 200px;
+  width: 30%;
   margin-left: 1rem;
 }
 
@@ -50,12 +50,32 @@ button {
 }
 
 #addressBook div {
-  padding-top: 10px;
   border-bottom: 1px solid #ccc;
+  padding: 1rem 0;
 }
 
 #addressBook img {
   float: left;
-  width: 90px;
+  width: 70px;
   margin-right: 1em;
+  display: flow-root;
+}
+
+#addressBook h3 {
+  font-size: 1.2em;
+  margin-top: 0;
+}
+
+/* To make website responsive */
+@media screen and (max-width: 600px) {
+  #addressBook {
+    width: 75vw;
+  }
+
+  #addressBook img {
+    width: 50px;
+  }
+  .form {
+    width: 75vw;
+  }
 }
